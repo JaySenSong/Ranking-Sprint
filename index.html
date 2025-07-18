@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>響應式網站</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    header nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    header nav select,
+    header nav button {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    header nav button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    header nav select {
+      background-color: white;
+    }
+
+    /* Content */
+    .content {
+      padding: 20px;
+    }
+
+    /* 排名跑馬燈 */
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      padding: 10px 0;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee-animation 10s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-block;
+      margin-right: 50px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    @keyframes marquee-animation {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* 主體內容區 */
+    .content-body {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1;
+      min-width: 280px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h4, .section h6 {
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #6c757d;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .content-body {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header .logo {
+        font-size: 1.2em;
+      }
+
+      header nav select,
+      header nav button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">網站Logo</div>
+    <nav>
+      <select>
+        <option value="taiwan">台灣</option>
+        <option value="hongkong">香港</option>
+        <option value="us">美國</option>
+      </select>
+      <select>
+        <option value="category1">種類 1</option>
+        <option value="category2">種類 2</option>
+        <option value="category3">種類 3</option>
+      </select>
+      <select>
+        <option value="item1">排名物品 A</option>
+        <option value="item2">排名物品 B</option>
+        <option value="item3">排名物品 C</option>
+      </select>
+      <button>搜索</button>
+      <button>社群</button>
+      <button>登入</button>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- 排名跑馬燈 -->
+    <div class="section">
+      <h4>熱門排名</h4>
+      <div class="marquee">
+        <div class="marquee-content">
+          <span class="marquee-item">排名 1: 物品 A</span>
+          <span class="marquee-item">排名 2: 物品 B</span>
+          <span class="marquee-item">排名 3: 物品 C</span>
+          <span class="marquee-item">排名 4: 物品 D</span>
+          <span class="marquee-item">排名 5: 物品 E</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主體內容 -->
+    <div class="content-body">
+      <!-- A -->
+      <div class="section">
+        <h4>準確率</h4>
+        <p>這是準確率區域</p>
+      </div>
+      <!-- B -->
+      <div class="section">
+        <h4>排名</h4>
+        <p>這是排名區域</p>
+        <div class="section">
+          <h6>分享排名</h6>
+          <p>這是分享排名區域</p>
+        </div>
+      </div>
+      <!-- C -->
+      <div class="section">
+        <h4>最近預覽</h4>
+        <p>這是最近預覽區域</p>
+      </div>
+      <div class="section">
+        <h4>廣告</h4>
+        <p>這是廣告區域</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 網站名稱 | 版權所有</p>
+  </footer>
+
+</body>
+</html>
